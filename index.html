@@ -1,0 +1,79 @@
+<!doctype html>
+<html lang="ms">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <meta name="theme-color" content="#0f5fa8" />
+  <title>Misi Mesej Rahsia Kampung Harmoni</title>
+  <link rel="stylesheet" href="style.css" />
+</head>
+<body>
+  <main class="app-shell">
+    <header class="hero">
+      <div class="badge">Pendidikan Moral • Tahun 5</div>
+      <h1>🧩 Misi Mesej Rahsia Kampung Harmoni</h1>
+      <p><strong>Kampung Harmoni kehilangan mesej rahsia.</strong> Susun puzzle untuk menemui mesej tersebut.</p>
+    </header>
+
+    <section class="status-panel" aria-live="polite">
+      <div><span id="moveCount">0</span><small>Gerakan</small></div>
+      <div><span id="correctCount">0/12</span><small>Betul</small></div>
+      <div><span id="timer">00:00</span><small>Masa</small></div>
+      <button id="resetBtn" class="secondary">↻ Susun Semula</button>
+    </section>
+
+    <section class="game-card">
+      <div class="game-grid">
+        <div>
+          <h2>1. Susun 12 keping puzzle</h2>
+          <p class="hint">Seret setiap kepingan ke petak yang betul. Anda juga boleh klik satu kepingan, kemudian klik petak sasaran.</p>
+          <div id="tray" class="tray" aria-label="Kepingan puzzle"></div>
+        </div>
+
+        <div>
+          <div class="board-title-row">
+            <h2>Papan Puzzle</h2>
+            <button id="previewBtn" class="ghost" type="button">👁 Lihat Gambar</button>
+          </div>
+          <div id="board" class="board" aria-label="Papan puzzle 12 petak"></div>
+        </div>
+      </div>
+    </section>
+
+    <section id="revealSection" class="reveal-card locked" aria-live="polite">
+      <div class="lock-copy">
+        <span class="lock-icon">🔒</span>
+        <div>
+          <h2>2. Balikkan kepingan puzzle</h2>
+          <p>Selesaikan gambar dahulu untuk membuka mesej rahsia.</p>
+        </div>
+      </div>
+      <button id="flipBtn" class="primary" disabled>🔄 Balikkan Kepingan</button>
+      <div id="flipGrid" class="flip-grid" aria-label="Bahagian belakang kepingan"></div>
+    </section>
+
+    <section id="messageSection" class="message-card hidden">
+      <h2>3. Susun mesej rahsia</h2>
+      <p>Seret perkataan ke ruang kosong dalam susunan yang betul.</p>
+      <div id="wordBank" class="word-bank"></div>
+      <div id="messageSlots" class="message-slots"></div>
+      <div class="actions">
+        <button id="checkBtn" class="primary">✅ Semak Jawapan</button>
+        <button id="clearBtn" class="secondary">Kosongkan</button>
+      </div>
+      <p id="feedback" class="feedback" aria-live="polite"></p>
+    </section>
+
+    <footer>
+      Aktiviti interaktif • Nilai Kerjasama • Kampung Harmoni
+    </footer>
+  </main>
+
+  <dialog id="previewDialog">
+    <button id="closePreview" class="dialog-close" aria-label="Tutup">×</button>
+    <img src="assets/kampung-harmoni.png" alt="Gambar lengkap sambutan perayaan dan kerjasama di Kampung Harmoni" />
+  </dialog>
+
+  <script src="script.js"></script>
+</body>
+</html>
